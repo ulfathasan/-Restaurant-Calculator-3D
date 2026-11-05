@@ -1,0 +1,8 @@
+{
+  "name": "Restaurant Calculator - বাংলা হোটেল ও রেস্টুরেন্ট বিলিং",
+  "description": "বাংলা খাবারের হোটেল ও রেস্টুরেন্টের জন্য সম্পূর্ণ ফ্রি অনলাইন ও অফলাইন পিওএস বিলিং, টেবিল ও অর্ডার ম্যানেজমেন্ট, মেনু, বাকির খাতা ও লাভ-ক্ষতির হিসাব সফটওয়্যার।",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

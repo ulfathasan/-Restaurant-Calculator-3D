@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *, body.dark-theme, body.dark-theme *));
+
+:root {
+  --primary-color: #d97706;
+  --primary-color-hover: #b45309;
+  --secondary-color: #64748b;
+  --background-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --border-color: #e2e8f0;
+  --header-bg: #ffffff;
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body.dark-theme, .dark {
+  --primary-color: #4dabf7;
+  --primary-color-hover: #1e88e5;
+  --secondary-color: #adb5bd;
+  --background-color: #121212;
+  --text-color: #e9ecef;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 4px 8px rgba(0,0,0,0.4), 0 12px 24px -4px rgba(0,0,0,0.6);
+  --border-color: #495057;
+  --header-bg: #1e1e1e;
+}
+
+/* 3D Glassmorphism & Depth Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel,
+body.dark-theme .glass-panel {
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-3d {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .card-3d,
+body.dark-theme .card-3d {
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.card-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -8px rgba(0, 0, 0, 0.1), 0 10px 12px -5px rgba(0, 0, 0, 0.06);
+}
+
+.dark .card-3d:hover,
+body.dark-theme .card-3d:hover {
+  box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.7);
+}
+
+.btn-3d {
+  position: relative;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-3d:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Custom scrollbars for POS touch screens */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Print specific styles */
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  @page {
+    margin: 4mm;
+    size: auto;
+  }
+}
